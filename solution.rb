@@ -144,18 +144,21 @@ people.each do |name|
     avr = 0
     #loop through each transactions inside a name
      name[:transactions].each do |typ|
-        #fide type "coffee" and git the amount from it
+        #find type "coffee" and git the amount from it
         if typ[:type] == "COFFEE"
             #add coffee counter to git the average
             cofee +=1
             amountt = typ[:amount]
+            #adding all amounts of coffee to total
             total += amountt
+            # gitting the average
              avr = total / cofee
-        end
-    end
+        end # end of if statment
+    end # end of inner loop
+
     #push the name of persone and the average to  coffee_average array
     coffee_average_per_person.push({name: name[:name], coffee_average: avr})
-end
+end # end of big loop
 #===========================
 #===========================
 stores = [
@@ -201,23 +204,63 @@ stores = [
 ]
 
 most_expensive_products_by_store = []
-qw = []
+#loop in stores
 stores.each do |store|
-    price_a = []
-    hi_price = 0.0
-    
+    #for each store create these==
+    price_array = []
+    description_array = []
+    name_of_higer_product = ""
+    hiegher_price = 0.0
+    #loop inside each product inside stores
     store[:products].map do |product|
+        #gitting  prices and  names
         all_price = product[:price]
-        price_a.push(all_price.to_f)
-    end
-    
-    if price_a[0] > price_a[1]
-        hi_price = price_a[0]
-
+        prudct_name = product[:description]
+        #pushing price to price array
+        price_array.push(all_price.to_f)
+        #pushing product name to description array
+        description_array.push(prudct_name)
+    end # end of inner loop
+    #check what price is higher and make it the heigher price and get the product name as well
+    if price_array[0] > price_array[1]
+        hiegher_price = price_array[0]
+        name_of_higer_product = description_array[0]
     else
-        hi_price = price_a[1]
+        hiegher_price = price_array[1]
+        name_of_higer_product = description_array[1]
     end
-
-    qw.push({store_name: store[:store_name], most_expensive_product: {price: hi_price}} )
+    #push the result to the givin array
+    most_expensive_products_by_store.push({store_name: store[:store_name], most_expensive_product: {description: name_of_higer_product, price: hiegher_price}})
     
 end
+
+#===========================
+#===========================
+
+puts "Wlecom to the friends list "
+#make global variable
+Student_list = []
+
+def add_friend
+    p "add a student"
+    student_name = gets.chomp
+    #push the name to student list
+    Student_list.push(student_name)
+end
+    
+def menu
+        p "Do you want to add a friend ? (y/n)"
+        gets.chomp
+end
+         
+user_choise = menu
+
+until user_choise == "n"
+    #keep calling add friend untl user click n
+    case user_choise
+    when "y" then add_friend
+    end
+    user_choise = menu
+end
+#print the student list
+p "Thank you here is your friends list #{Student_list}"
