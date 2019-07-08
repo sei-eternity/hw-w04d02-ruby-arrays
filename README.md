@@ -26,12 +26,19 @@ upper_case_full_names = []
 ```
 
 ### Answer
+<!-- array.map(&:upcase)
+=> { "Ahmed", "}  -->
+student.name.map(&:name).map(&:upcase)
+=> { "Ahmed","'Al-Bahrani"}
+=> {"Reem","AlHarbi"}
+=> {"Mansour","Almohsen"}
+end 
 
-```rb
+<!-- ```rb
 AHMED AL-BAHRANI
 REEM ALHARBI
 MANSOUR ALMOHSEN
-```
+``` -->
 
 ## 2. Find the first order for each user
 
@@ -80,15 +87,9 @@ first_order_for_each_user = []
 
 ```
 
-### Answer
+3.times { |i| puts users[i][:orders][0] 
 
-```rb
 
-{:description=>"a bike"}
-{:description=>"bees"}
-{:description=>"a MacBook"}
-
-```
 
 ## 3. Find the average amount spent on coffee, per transaction, for each person
 
@@ -153,19 +154,29 @@ coffee_average_per_person = []
 
 ```
 
+             
 ### Answer
+Ahlam = [7.43,14.65,4,43]
+ahlam.sum.fdiv(arr.size)
+Sulaimam = [800,14.65,4,43]
+sulaiman.sum.fdiv(arr.size)
+Norah= [7.43,100,4.43]
+norah.sum.fdiv(arr.size)
+end
+
+
 
 ```rb
 
-{:name=>"Ahlam", :coffee_average=>5.93}
-{:name=>"Sulaiman", :coffee_average=>4.43}
-{:name=>"Norah", :coffee_average=>37.28666666666667}
+# {:name=>"Ahlam", :coffee_average=>5.93}
+# {:name=>"Sulaiman", :coffee_average=>4.43}
+# {:name=>"Norah", :coffee_average=>37.28666666666667}
 
-```
+# ```
 
-## 4. Find the most expensive product for each store, with the store name:
+4. Find the most expensive product for each store, with the store name:
 
-```rb
+
 
 stores = [
   {
@@ -215,30 +226,23 @@ most_expensive_products_by_store = []
 
 ### Answer
 
+most_expensive_products_by_store = stores.map do |arr_store|
+item_price = arr_store[products].max_by do |item|
+item[price]
+end
+{
+
+  name: arr_store[store_name],
+  description:item_price[description],
+  expensive_products: item_price[price]
+}
+
+
 ```rb
 
-{:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
-{:store_name=>"Tamimi", :most_expensive_product=>{:description=>"Silver", :price=>654.44}}
-{:store_name=>"Souq", :most_expensive_product=>{:description=>"Sapphire", :price=>899.33}}
+# {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
+# {:store_name=>"Tamimi", :most_expensive_product=>{:description=>"Silver", :price=>654.44}}
+# {:store_name=>"Souq", :most_expensive_product=>{:description=>"Sapphire", :price=>899.33}}
 
-```
+# ```
 
-# Bonus
-
-Write an infinite loop that will make you add all the your friends in the students list and after each add will ask if you want to quit the loop (yes/no) if the user choose no print all the students array
-
-### Answer
-
-```
-
-add a student
-Asma Baabdullah
-Do you want to continue ? (y/n)
-y
-add a student
-Fajr Albakiri
-Do you want to continue ? (y/n)
-y
-add a student
-
-```
