@@ -25,7 +25,13 @@ upper_case_full_names = []
 
 ```
 
-### Answer
+upper_case_full_names = []
+ students.map do |names|
+    upper_case_full_names.push("#{names[:first_name].upcase} #{names[:last_name].upcase} " )
+    
+  end
+  p upper_case_full_names
+
 
 ```rb
 AHMED AL-BAHRANI
@@ -79,8 +85,13 @@ users = [
 first_order_for_each_user = []
 
 ```
+<!-- not sure what  is the problem it gives me nothing-->
 
-### Answer
+first_order_for_each_user = []
+users.map do |order|
+  first_order_for_each_user.push("#{order[:'a bike'] } #{order[:'bees'] } " )
+end
+puts first_order_for_each_user
 
 ```rb
 
