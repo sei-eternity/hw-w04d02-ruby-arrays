@@ -230,7 +230,6 @@ if a > b
   most_expensive_products_by_store = a
 else most_expensive_products_by_store = b
 
-  # p most_expensive_products_by_store
  end
 
   p c= (stores[1][:products][0][:price])
@@ -253,6 +252,7 @@ else most_expensive_products_by_store = b
 
 
         p most_expensive_products_by_store
+
 
 {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
 {:store_name=>"Tamimi", :most_expensive_product=>{:description=>"Silver", :price=>654.44}}
