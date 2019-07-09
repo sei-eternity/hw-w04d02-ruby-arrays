@@ -223,35 +223,81 @@ most_expensive_products_by_store = []
 ```
 
 ### Answer
+stores = [
+  {
+      store_name: 'Jarir',
+      products: [
+          {
+              description: 'Titanium',
+              price: 9384.33
+          },
+          {
+              description: 'Gold',
+              price: 345.54
+          }
+      ]
+  },
+  {
+      store_name: 'Danub',
+      products: [
+          {
+              description: 'Silver',
+              price: 654.44
+          },
+          {
+              description: 'Ruby',
+              price: 323.43
+          }
+      ]
+  },
+  {
+      store_name: 'Souq',
+      products: [
+          {
+              description: 'Opal',
+              price: 345.43
+          },
+          {
+              description: 'Sapphire',
+              price: 899.33
+          }
+      ]
+  }
+]
 
-p a= (stores[0][:products][0][:price])
-p b=(stores[0][:products][1][:price])
+most_expensive_products_by_store = []
+
+
+ a= (stores[0][:products][0][:price])
+ b=(stores[0][:products][1][:price])
 if a > b
-  most_expensive_products_by_store = a
-else most_expensive_products_by_store = b
+  most_expensive_products_by_store = (stores[0][:products][0])
+else most_expensive_products_by_store = (stores[0][:products][1])
 
+   p most_expensive_products_by_store
  end
 
-  p c= (stores[1][:products][0][:price])
-  p d=(stores[1][:products][1][:price])
+   c= (stores[1][:products][0][:price])
+   d=(stores[1][:products][1][:price])
   if c > d
-    most_expensive_products_by_store = c
-  else most_expensive_products_by_store = d
+    most_expensive_products_by_store = (stores[1][:products][0])
+  else most_expensive_products_by_store = (stores[1][:products][1])
 
-    # p most_expensive_products_by_store
+    p most_expensive_products_by_store
   end
 
-    p e= (stores[2][:products][0][:price])
-    p f=(stores[2][:products][1][:price])
+     e= (stores[2][:products][0][:price])
+     f=(stores[2][:products][1][:price])
     if e > f
-      most_expensive_products_by_store = e
-    else most_expensive_products_by_store = f
+      most_expensive_products_by_store = (stores[2][:products][0])
+    else most_expensive_products_by_store = (stores[2][:products][1])
 
       # p most_expensive_products_by_store
     end
 
 
         p most_expensive_products_by_store
+
 
 
 {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
