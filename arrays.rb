@@ -127,17 +127,17 @@ people = [
 
 coffee_average_per_person = []
 
-people.each do |person|
+people.each do |i|
     sum = 0
 counter = 0
-    person[:transactions].each do |transaction|
+    i[:transactions].each do |transaction|
         if transaction[:type] == 'COFFEE'
             sum += transaction[:amount]#the vlue the coffe 
             counter += 1 #to complete all array
                 end
  end
 # add it to the array as hash 
-    coffee_average_per_person.push({name: person[:name], coffe_average: sum /counter})#count the avg sum/counter
+    coffee_average_per_person.push({name: i[:name], coffe_average: sum /counter})#count the avg sum/counter
 end
 
 
@@ -200,7 +200,7 @@ stores.each do |store|
             describe = item[:description] #to get the description for the largest slected item 
         end
     end
-    # push it as hash 
+    # push it in array as hash 
     most_expensive_products_by_store.push({store_name: store[:store_name], most_expensive_product: {description: desc, price: price}})
 end
 
