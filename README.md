@@ -22,6 +22,8 @@ students = [
 ]
 
 upper_case_full_names = []
+students.each { |name| upper_case_full_names.push("#{name[:first_name].upcase} #{name[:last_name].upcase}") }
+puts upper_case_full_names
 
 ```
 
@@ -77,6 +79,9 @@ users = [
 ]
 
 first_order_for_each_user = []
+
+users.each { |user| first_order_for_each_user.push("#{user[:orders].first}")}
+puts first_order_for_each_user
 
 ```
 
@@ -150,6 +155,15 @@ people = [
 
 
 coffee_average_per_person = []
+people.each do |avg|
+    sum = 0
+    count = 0
+    avg[:transactions].each do |i|
+    if i[:type] == 'COFFEE'
+    total += i[:amount]
+    count +=1
+    end
+   end
 
 ```
 
