@@ -62,7 +62,9 @@ users = [
   }
 ]
 first_order_for_each_user = []
-first_order_for_each_user = users.map {|i| i[:orders].first} #to get first thing in orders 
+users.each do |i|
+    first_order_for_each_user.push(i[:orders].first)
+end
 
 
 # {:description=>"a bike"}
