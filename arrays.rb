@@ -1,7 +1,7 @@
 #########  1  #########
 students = [
   {
-      first_name: 'Ahmed',
+       : 'Ahmed',
       last_name: 'Al-Bahrani'
   },
   {
@@ -62,7 +62,7 @@ users = [
   }
 ]
 first_order_for_each_user = []
-first_order_for_each_user = users.map {|i| i[:orders].first}
+first_order_for_each_user = users.map {|i| i[:orders].first} #to get first thing in orders 
 
 
 # {:description=>"a bike"}
