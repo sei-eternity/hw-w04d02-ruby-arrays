@@ -121,10 +121,79 @@ product_price = a[:products].map do |p|
       p[:price]
 end
 
-{:store_name=> a[:store_name], :most_expensive_product=>{:description=> a[:products][product_price.index(product_price.max)][:description] , :price=> product_price.max}}
+info = {:store_name=> a[:store_name], :most_expensive_product=>{:description=> a[:products][product_price.index(product_price.max)][:description] , :price=> product_price.max}}
 
 end
 puts expensive_store
 
 # # # # # # # # # # # # # # # # # # # # # # 
 
+people = [
+  {
+      name: 'Ahlam',
+      transactions: [
+          {
+              type: 'COFFEE',
+              amount: 7.43
+          },
+          {
+              type: 'TACOS',
+              amount: 14.65
+          },
+          {
+              type: 'COFFEE',
+              amount: 4.43
+          }
+      ]
+  },
+  {
+      name: 'Sulaiman',
+      transactions: [
+          {
+              type: 'BIKES',
+              amount: 800.00
+          },
+          {
+              type: 'TACOS',
+              amount: 14.65
+          },
+          {
+              type: 'COFFEE',
+              amount: 4.43
+          }
+      ]
+  },
+  {
+      name: 'Norah',
+      transactions: [
+          {
+              type: 'COFFEE',
+              amount: 7.43
+          },
+          {
+              type: 'COFFEE',
+              amount: 100.00
+          },
+          {
+              type: 'COFFEE',
+              amount: 4.43
+          }
+      ]
+  }
+]
+
+
+coffee = people.map do |a|
+ave_coffee =0
+count =0
+    a[:transactions].map do |t|
+        if t[:type] == 'COFFEE'
+             ave_coffee +=(t[:amount])
+             count+=1
+        end
+    end
+
+puts "#{a[:name]} #{ave_coffee /= count } "
+end
+
+puts coffee
