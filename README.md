@@ -24,8 +24,14 @@ students = [
 upper_case_full_names = []
 
 ```
-
-### Answer
+######
+i = 0 
+while i < students.length 
+full_name = (students[i][:first_name]+ students[i][:last_name]).upcase 
+p full_name
+i+=1
+end 
+######
 
 ```rb
 AHMED AL-BAHRANI
@@ -80,7 +86,16 @@ first_order_for_each_user = []
 
 ```
 
-### Answer
+#####
+ while i < users.length 
+    p users[i][:orders].first 
+
+ i+=1
+ end 
+
+
+#####
+
 
 ```rb
 
@@ -153,7 +168,21 @@ coffee_average_per_person = []
 
 ```
 
-### Answer
+### 
+coffee_average_per_person = people.map do |person|
+    counter = 0
+
+    sum = 0
+    person[:transactions].each do |transaction|
+      if transaction [:type] == 'COFFEE'
+       counter += 1
+         sum += transaction [:amount] 
+      end
+
+    end
+ p sum/counter
+  end  
+
 
 ```rb
 
@@ -209,11 +238,19 @@ stores = [
   }
 ]
 
-most_expensive_products_by_store = []
+
+
 
 ```
 
-### Answer
+### Answer still not working 
+most_expensive_product_in_stores = stores.map do |store|
+    most_expensive_product = store [:products].max_by do |product|
+    p product [:price]
+    
+    end 
+    end 
+
 
 ```rb
 
