@@ -132,7 +132,7 @@ people.each do |person|
 counter = 0
     person[:transactions].each do |transaction|
         if transaction[:type] == 'COFFEE'
-            sum += transaction[:amount]#the vlue the coffe key
+            sum += transaction[:amount]#the vlue the coffe 
             counter += 1 #to complete all array
                 end
  end
