@@ -62,10 +62,7 @@ users = [
   }
 ]
 first_order_for_each_user = []
-#git first descr
-users.each do |i|
-    first_order_for_each_user.push(i[:orders].first)
-end
+
 
 
 # {:description=>"a bike"}
