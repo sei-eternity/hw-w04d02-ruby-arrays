@@ -126,9 +126,10 @@ people = [
 
 
 coffee_average_per_person = []
-sum = 0
-counter = 0
+
 people.each do |person|
+    sum = 0
+counter = 0
     person[:transactions].each do |transaction|
         if transaction[:type] == 'COFFEE'
             sum += transaction[:amount]#the vlue the coffe key
@@ -190,14 +191,16 @@ stores = [
 most_expensive_products_by_store = []
 
 stores.each do |store|
+    #intial vlaues for each store 
     price = 0
     describe = ""
     store[:products].each do |item|
-        if item[:price] > price
+        if item[:price] > price #cmpare and store largest amount 
             price = item[:price]
-            describe = item[:description]
+            describe = item[:description] #to get the description for the largest slected item 
         end
     end
+    # push it as hash 
     most_expensive_products_by_store.push({store_name: store[:store_name], most_expensive_product: {description: desc, price: price}})
 end
 
