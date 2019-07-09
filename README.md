@@ -22,6 +22,11 @@ students = [
 ]
 
 upper_case_full_names = []
+students.each {|i| upper_case_full_names.push("#{i[:first_name].upcase} #{i[:last_name].upcase}")}
+    
+puts upper_case_full_names
+    
+end  
 
 ```
 
@@ -77,7 +82,10 @@ users = [
 ]
 
 first_order_for_each_user = []
-
+users.each {|i| first_order_for_each_user.push("#{i[:orders].first}")}
+    
+puts first_order_for_each_user
+end
 ```
 
 ### Answer
@@ -93,6 +101,7 @@ first_order_for_each_user = []
 ## 3. Find the average amount spent on coffee, per transaction, for each person
 
 ```rb
+def average
 
 people = [
   {
@@ -146,11 +155,23 @@ people = [
           }
       ]
   }
-]
+] ###################### needs work
 
-
+def avg
 coffee_average_per_person = []
+people.each |i| 
+ coffee = 0
+ count = 0
 
+if transactions[:type] == "COFFEE"
+total = transactions[:amount]
+ count++
+puts coffee_average_per_person.push({"#{name} coffee_average: "coffee / [:count]})
+end
+
+
+
+end
 ```
 
 ### Answer
@@ -211,7 +232,9 @@ stores = [
 
 most_expensive_products_by_store = []
 
-```
+most_expensive_products_by_store = []
+
+end```
 
 ### Answer
 
@@ -242,3 +265,21 @@ y
 add a student
 
 ```
+
+
+def menu
+    puts ""
+    puts "add a student's name"
+    student_name = gets.chomp
+    puts " Do you want to continue ? (y/n)"
+    
+    gets.chomp
+end
+
+user_choise = menu
+    until user_choise == "n"
+    case user_choise
+    when "y" then menu
+    end
+
+end
