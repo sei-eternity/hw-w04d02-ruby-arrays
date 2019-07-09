@@ -27,7 +27,11 @@ upper_case_full_names = []
 
 ### Answer
 
-```rb
+upper_case_full_names = [students[0][:first_name].upcase + " "+ students[0][:last_name].upcase , students[1][:first_name].upcase + " "+ students[1][:last_name].upcase , students[2][:first_name].upcase + " "+ students[2][:last_name].upcase]
+
+  
+p upper_case_full_names
+...
 AHMED AL-BAHRANI
 REEM ALHARBI
 MANSOUR ALMOHSEN
@@ -82,7 +86,9 @@ first_order_for_each_user = []
 
 ### Answer
 
-```rb
+first_order_for_each_user = [ users[0][:orders][0], users[1][:orders][0] ,users[2][:orders][0]]
+
+p first_order_for_each_user
 
 {:description=>"a bike"}
 {:description=>"bees"}
@@ -155,7 +161,10 @@ coffee_average_per_person = []
 
 ### Answer
 
-```rb
+
+p (people[0][:transactions][0][:amount]+people[0][:transactions][2][:amount])/2
+p (people[1][:transactions][2][:amount])/1
+p (people[2][:transactions][0][:amount]+people[2][:transactions][2][:amount])/2
 
 {:name=>"Ahlam", :coffee_average=>5.93}
 {:name=>"Sulaiman", :coffee_average=>4.43}
@@ -215,7 +224,35 @@ most_expensive_products_by_store = []
 
 ### Answer
 
-```rb
+p a= (stores[0][:products][0][:price])
+p b=(stores[0][:products][1][:price])
+if a > b
+  most_expensive_products_by_store = a
+else most_expensive_products_by_store = b
+
+  # p most_expensive_products_by_store
+ end
+
+  p c= (stores[1][:products][0][:price])
+  p d=(stores[1][:products][1][:price])
+  if c > d
+    most_expensive_products_by_store = c
+  else most_expensive_products_by_store = d
+
+    # p most_expensive_products_by_store
+  end
+
+    p e= (stores[2][:products][0][:price])
+    p f=(stores[2][:products][1][:price])
+    if e > f
+      most_expensive_products_by_store = e
+    else most_expensive_products_by_store = f
+
+      # p most_expensive_products_by_store
+    end
+
+
+        p most_expensive_products_by_store
 
 {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
 {:store_name=>"Tamimi", :most_expensive_product=>{:description=>"Silver", :price=>654.44}}
